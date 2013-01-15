@@ -1,0 +1,12 @@
+Aihe: luolastopeli
+Luodaan peli, jossa päähenkilön tehtävänä on kulkea sokkeloisissa luolastoissa taistellen hirviöitä vastaan ja saadaan kokemuspisteitä, joiden avulla tullaan vahvemmaksi. 
+Luolaston lopussa odottaa pomotaistelu, joka on tavallisia vastustajia hankalampi.
+Mahdollisesti lisätään pelin tallentamismahdollisuus ja useampia luolastoja.
+
+Käyttäjät: Pelaaja
+
+Kaikkien käyttäjien toiminnot:
+
+    Pelin avaaminen
+    Pelin pelaaminen
+    Pelitilanteen tallentaminen

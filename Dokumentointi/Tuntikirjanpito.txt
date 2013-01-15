@@ -1,0 +1,4 @@
+Harjoitustyöhön käytetyt tunnit:
+
+	15.1.
+16-19: GitHub laitettu toimimaan ja muut alkutoimet valmiina.
