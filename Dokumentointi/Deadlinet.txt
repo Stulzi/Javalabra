@@ -1,0 +1,17 @@
+Alustavat deadlinet:
+
+22.1.
+-Pelihahmo valmiina ja hieman hirviöitä (Laajat ja läpimenevät testit, Luokkakaavio)
+
+29.1.
+-Hirviöt valmiina ja taistelumekaniikka kuntoon (Tarkempi luokkakaavio)
+
+5.2.
+-Huoneiden toteutus ja Käyttöliittymän aloitus (JavaDoc ja sekvenssikaavioita)
+
+12.2.
+-Luolasto ja Käyttöliittymän parantelua (1-2 Sekvenssikaaviota lisää)
+
+19-22.2.
+- Peli valmis (Käyttöliittymä loppuun ja pientä viilailua) 
+(Valmis JavaDoc, kirjoita rakennekuvaus, luo ajettava jar-tiedosto)

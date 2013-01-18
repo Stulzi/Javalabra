@@ -1,0 +1,32 @@
+Tärkeitä luokkia:
+Luolasto
+Huone
+Pelihahmo
+Hirviö
+Taistelu (toteutus mietinnässä)
+Käyttöliittymä
+
+Luolasto:
+-koostuu useista huoneista
+-tässä versiossa vain yksi
+-täytyy luoda ohjelman käynnistyessä
+
+Huone:
+-sisältää hirviöitä
+-voi sisältää myös palkinnon suorituksesta
+-sisäänkäynnit seuraaviin huoneisiin
+
+Pelihahmo:
+- Nimi (pelaaja saa mahdollisesti päättää)
+-HP, Strenght, MP, jne.
+-EXP
+
+Hirviö:
+-Nimi
+-HP, Strenght, jne.
+-useita
+-erilaisia
+
+Käyttöliittymä:
+-tod.näk. tekstipohjainen
+-pelaajalle annettavat vaihtoehdot (tod.näk. painettavia nappeja)
