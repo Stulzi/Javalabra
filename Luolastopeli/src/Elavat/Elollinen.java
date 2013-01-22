@@ -10,4 +10,6 @@ public interface Elollinen {
     
     public int annaPuolustus();
     
+    public String annaNimi();
+    
 }
