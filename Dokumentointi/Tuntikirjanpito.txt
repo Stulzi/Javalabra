@@ -8,3 +8,6 @@ Harjoitustyöhön käytetyt tunnit:
 
 	20.1.
 16-17: Kirjottelin luokat Pelihahmo ja Vihollinen. (Tarvittaessa muutettavia)
+
+	22.1.
+15-17: Tein testit luokille Pelihahmo ja Vihollinen. (Korjasin myös niiden metodeja ja lisäsin puuttuvia.)
