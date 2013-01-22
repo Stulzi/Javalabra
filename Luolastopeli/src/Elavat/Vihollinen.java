@@ -17,7 +17,7 @@ public class Vihollinen implements Elollinen{
     }
     
     @Override
-    public void vähennäNykyistaHP(int maara) {
+    public void vahennaNykyistaHP(int maara) {
         if (maara<1){
             return;
         }
@@ -45,6 +45,14 @@ public class Vihollinen implements Elollinen{
     @Override
     public String annaNimi() {
         return this.nimi;
+    }
+    
+    public int annaHP(){
+        return this.maxHP;
+    }
+    
+    public int annaNykyinenHP(){
+        return this.nykyinenHP;
     }
     
 }

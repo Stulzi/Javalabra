@@ -21,7 +21,7 @@ public class Pelihahmo implements Elollinen{
     }
     
     @Override
-    public void vähennäNykyistaHP(int maara) {
+    public void vahennaNykyistaHP(int maara) {
         if(maara<1){
             return;
         }
@@ -46,7 +46,7 @@ public class Pelihahmo implements Elollinen{
         return this.puolustus;
     }
     
-    public void vahennaNykyistäSP(int maara){
+    public void vahennaNykyistaSP(int maara){
         if(maara<1){
             return;
         }
@@ -90,7 +90,21 @@ public class Pelihahmo implements Elollinen{
     public String annaNimi() {
         return this.nimi;
     }
-
     
+    public int annaHP(){
+        return this.maxHP;
+    }
+    
+    public int annaNykyinenHP(){
+        return this.nykyinenHP;
+    }
+    
+    public int annaSP(){
+        return this.maxSP;
+    }
+    
+    public int annaNykyinenSP(){
+        return this.nykyinenSP;
+    }
     
 }

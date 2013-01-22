@@ -2,7 +2,7 @@ package Elavat;
 
 public interface Elollinen {
 
-    public void vähennäNykyistaHP(int maara);
+    public void vahennaNykyistaHP(int maara);
     
     public int annaVoima();
     
@@ -11,5 +11,9 @@ public interface Elollinen {
     public int annaPuolustus();
     
     public String annaNimi();
+    
+    public int annaHP();
+    
+    public int annaNykyinenHP();
     
 }
