@@ -4,7 +4,7 @@ Alustavat deadlinet:
 -Pelihahmo valmiina ja hieman hirviöitä (Laajat ja läpimenevät testit, Luokkakaavio)
 
 29.1.
--Hirviöt valmiina ja taistelumekaniikka kuntoon (Tarkempi luokkakaavio)
+-Taistelumekaniikka kuntoon (Tarkempi luokkakaavio)
 
 5.2.
 -Huoneiden toteutus ja Käyttöliittymän aloitus (JavaDoc ja sekvenssikaavioita)

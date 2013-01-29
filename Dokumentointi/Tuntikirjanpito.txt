@@ -11,3 +11,10 @@ Harjoitustyöhön käytetyt tunnit:
 
 	22.1.
 15-17: Tein testit luokille Pelihahmo ja Vihollinen. (Korjasin myös niiden metodeja ja lisäsin puuttuvia.)
+
+	27.1.
+16-17: Aloin toteuttamman taistelumekaniikkaa.
+
+	29.1.
+14-15: Korjasin taistelumekaniikan (mahdollisesti) lopulliseen muotoonsa. 
+	(Mahdollista suorittaa yksinkertainen automaattitaistelu.)
