@@ -16,6 +16,10 @@ public class Vihollinen implements Elollinen{
         this.nimi=nimi;
     }
     
+    /**
+     * Vähentää vihollisen HP-arvoa
+     * @param maara vähennettävä määrä
+     */
     @Override
     public void vahennaNykyistaHP(int maara) {
         if (maara<1){
@@ -29,6 +33,10 @@ public class Vihollinen implements Elollinen{
         return this.voima;
     }
 
+    /**
+     * Tarkistaa onko vihollinen elossa
+     * @return false jos HP on 0
+     */
     @Override
     public boolean onkoElossa() {
         if (this.nykyinenHP<1){

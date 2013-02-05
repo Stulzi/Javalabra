@@ -18,3 +18,6 @@ Harjoitustyöhön käytetyt tunnit:
 	29.1.
 14-15: Korjasin taistelumekaniikan (mahdollisesti) lopulliseen muotoonsa. 
 	(Mahdollista suorittaa yksinkertainen automaattitaistelu.)
+
+	5.2.
+13-16: Parantelin taistelumekaniikkaa, aloitin käyttöliittymän tekoa ja kirjoitin muutmat javadocit.
