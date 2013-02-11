@@ -21,3 +21,6 @@ Harjoitustyöhön käytetyt tunnit:
 
 	5.2.
 13-16: Parantelin taistelumekaniikkaa, aloitin käyttöliittymän tekoa ja kirjoitin muutmat javadocit.
+
+	11.2.
+11.00-11.15: Lisäsin Luolasto-luokan ja korjailin Luola-luokkaa muutokseen sopivaksi.

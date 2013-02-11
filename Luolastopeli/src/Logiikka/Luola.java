@@ -3,50 +3,19 @@ package Logiikka;
 import Elavat.Pelihahmo;
 import Elavat.Vihollinen;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Luola {
     private static Pelihahmo hahmo;
     private static ArrayList viholliset;
-    private int koordinaatti;
-    private int vasen;
-    private int oikea;
     
-    public Luola(Pelihahmo hahmo, int koordinaatti, int vasen, int oikea){
+    public Luola(Pelihahmo hahmo, Vihollinen... viholliset){
         Luola.hahmo=hahmo;
-        this.koordinaatti=koordinaatti;
-        this.vasen=vasen;
-        this.oikea=oikea;
+        Luola.viholliset= new ArrayList<Vihollinen>();
+        Luola.viholliset.addAll(Arrays.asList(viholliset));
     }
     
-    public Luola(Pelihahmo hahmo, int koordinaatti, int vasen){
-        Luola.hahmo=hahmo;
-        this.koordinaatti=koordinaatti;
-        this.vasen=vasen;
-    }
-    
-    public Luola(Pelihahmo hahmo, int koordinaatti){
-        Luola.hahmo=hahmo;
-        this.koordinaatti=koordinaatti;
-    }
-    
-    public int getVasen(){
-        return this.vasen;
-    }
-    
-    public int getOikea(){
-        return this.oikea;
-    }
-    
-    /**
-     *Lisää annetut viholliset listaan
-     * @param viholliset huoneen viholliset
-     */
-    public static void synnytaViholliset(Vihollinen ... viholliset){
-        Luola.viholliset = new ArrayList<Vihollinen>();
-        for (Vihollinen vihollinen : viholliset) {
-            Luola.viholliset.add(vihollinen);
-        }
-    }
+
     
     /**
      * Tarkistaa onko huoneen viholliset voitettu
@@ -62,12 +31,9 @@ public class Luola {
     
 
     /**
-     *Luo huoneeseen viholliset ja aloittaa niiden taistelun hahmon kanssa
+     *Aloittaa taistelun hahmon ja vihollisten välillä
      */
     public static void taistele(){
-        Vihollinen lepakko= new Vihollinen("Bat", 320, 100, 40);
-        Vihollinen peikko= new Vihollinen("Goblin", 450, 160, 50);
-        synnytaViholliset(lepakko, peikko);
         
         while(true){
             
