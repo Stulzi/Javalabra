@@ -2,6 +2,7 @@ package Logiikka;
 
 import Elavat.Pelihahmo;
 import Elavat.Vihollinen;
+import UI.HyokkayksenKuuntelija;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -37,7 +38,7 @@ public class Luola {
         
         while(true){
             
-            //pitää tehdä ero tavallisten ja erikoishyöökästen välille
+            
             Taistelu.taistelu(hahmo, viholliset);
             if(onkoTyhja()){
                 System.out.println("You beat all the enemies!");

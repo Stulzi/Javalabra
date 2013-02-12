@@ -24,3 +24,6 @@ Harjoitustyöhön käytetyt tunnit:
 
 	11.2.
 11.00-11.15: Lisäsin Luolasto-luokan ja korjailin Luola-luokkaa muutokseen sopivaksi.
+	
+	12.2
+11-12: Koetin toteuttaa käyttöliittymää. (Jokin mättää...)

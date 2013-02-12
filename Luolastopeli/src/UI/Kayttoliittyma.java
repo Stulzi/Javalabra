@@ -1,9 +1,14 @@
 package UI;
    
+import Elavat.Pelihahmo;
+import Elavat.Vihollinen;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,8 +20,12 @@ import javax.swing.WindowConstants;
 public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
+    private Pelihahmo hahmo;
+    private ArrayList<Vihollinen> viholliset;
 
-    public Kayttoliittyma() {
+    public Kayttoliittyma(Pelihahmo hahmo,Vihollinen... viholliset) {
+        this.hahmo=hahmo;
+        this.viholliset.addAll(Arrays.asList(viholliset));
     }
 
     @Override
@@ -33,15 +42,28 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        container.add(new JTextArea()).setEnabled(false);
-        container.add(luoValikko(), BorderLayout.SOUTH);
+        BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
+        container.setLayout(layout);
+        
+        container.add(new JTextArea(
+                "HP:" + hahmo.annaNykyinenHP() + "/" + hahmo.annaHP() + 
+                " SP:" + hahmo.annaNykyinenSP() + "/" + hahmo.annaSP())
+                ).setEnabled(false);
+        container.add(new JTextArea("Testiteksti")).setEnabled(false);
+        container.add(LuoNapit(), BorderLayout.SOUTH);
     }
-
-    private JPanel luoValikko() {
-        JPanel panel = new JPanel(new GridLayout(1, 2));
-        panel.add(new JButton("Attack"));
-        panel.add(new JButton("Special Attack"));
-        return panel;
+    
+    private JPanel LuoNapit(){
+         JPanel panel = new JPanel(new GridLayout(1, 2));
+         JButton hyokkaa = new JButton("Attack");
+         JButton special = new JButton("Special");
+         HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija(hahmo, viholliset);
+         SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija(hahmo, viholliset);
+         hyokkaa.addActionListener(hyokkaysKuuntelija);
+         special.addActionListener(specialKuuntelija);
+         panel.add(hyokkaa);
+         panel.add(special);
+         return panel;
     }
          
     
