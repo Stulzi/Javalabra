@@ -42,7 +42,8 @@ public class Kayttoliittyma implements Runnable {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
         
-        JTextArea status = new JTextArea(hahmo.annaStatus());
+        JTextArea status = new JTextArea();
+        status.setText(hahmo.annaStatus());
         JTextArea teksti =new JTextArea("Testiteksti");
         container.add(status).setEnabled(false);
         container.add(teksti).setEnabled(false);

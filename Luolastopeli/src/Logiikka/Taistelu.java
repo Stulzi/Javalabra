@@ -14,9 +14,18 @@ public class Taistelu {
      * @param hahmo pelihahmo
      * @param viholliset tämänhetkiset viholliset
      */
-    public static void taistelu(){
+    public static void taistelu(String komento){
         
+        if(komento.contentEquals("hyokkaa")){
             hyokkaa(Luolasto.getHahmo(), Luola.getViholliset().get(0));
+        }
+        if(komento.contentEquals("special")){
+            if(Luolasto.getHahmo().annaNykyinenSP()<30){
+                return;
+            }
+            Luolasto.getHahmo().vahennaNykyistaSP(30);
+            erikoishyokkaa(Luolasto.getHahmo(), Luola.getViholliset().get(0));
+        }
             System.out.println("You attacked the " + Luola.getViholliset().get(0).annaNimi() + ".");
             if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
                 System.out.println("The " + Luola.getViholliset().get(0).annaNimi() + " died.");  
@@ -50,6 +59,19 @@ public class Taistelu {
          }
          System.out.println(vahinko);
          hyokatty.vahennaNykyistaHP(vahinko);
+    }
+
+    private static void erikoishyokkaa(Pelihahmo hahmo, Vihollinen vihollinen) {
+         Random noppa = new Random();
+         int voima=hahmo.annaVoima();
+         int puolustus=vihollinen.annaPuolustus();
+         double kerroin= ((double)(noppa.nextInt(4)+10)/(double)10);
+         int vahinko= (int)((double)voima*kerroin-puolustus);
+         if(vahinko<1){
+             vahinko=0;
+         }
+         System.out.println(vahinko);
+         vihollinen.vahennaNykyistaHP(vahinko);
     }
     
 }

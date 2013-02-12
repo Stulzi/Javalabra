@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Luola {
     private static Pelihahmo hahmo;
-    private static ArrayList viholliset;
+    private static ArrayList<Vihollinen> viholliset;
     
     public Luola(Pelihahmo hahmo, Vihollinen... viholliset){
         Luola.hahmo=hahmo;
@@ -33,12 +33,28 @@ public class Luola {
         return Luola.viholliset;
     }
     
+    public static String listaaViholliset(ArrayList<Vihollinen> viholliset){
+       
+        String lista = "";
+        for (Vihollinen vihollinen : viholliset) {
+            lista = lista + " a " + vihollinen.annaNimi(); 
+            if(!vihollinen.equals(viholliset.get(viholliset.size()-1))){
+               lista = lista + " and";
+            }
+        }
+        
+        return lista;
+    }
+    
     
 
     /**
      *Aloittaa taistelun hahmon ja vihollisten välillä
      */
     public static void taistele(){
+        
+        
+        System.out.println("You eneter a room with" + listaaViholliset(viholliset) );
         
         while(true){
             if(onkoTyhja()){

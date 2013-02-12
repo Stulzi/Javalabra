@@ -15,7 +15,8 @@ public class HyokkayksenKuuntelija implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        Taistelu.taistelu();
+        Taistelu.taistelu("hyokkaa");
+        
         
     }
     

@@ -14,7 +14,7 @@ public class SpecialKuuntelija implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        Taistelu.taistelu();
+        Taistelu.taistelu("special");
     }
     
     
