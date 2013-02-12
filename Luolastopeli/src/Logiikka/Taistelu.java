@@ -14,19 +14,19 @@ public class Taistelu {
      * @param hahmo pelihahmo
      * @param viholliset tämänhetkiset viholliset
      */
-    public static void taistelu(Pelihahmo hahmo, ArrayList<Vihollinen> viholliset){
+    public static void taistelu(){
         
-            System.out.println("You attacked the " + viholliset.get(0).annaNimi() + ".");
-            hyokkaa(hahmo, viholliset.get(0));
-            if(viholliset.get(0).annaNykyinenHP()<1){
-                System.out.println("The " + viholliset.get(0).annaNimi() + " died.");  
-                viholliset.remove(0);
+            hyokkaa(Luolasto.getHahmo(), Luola.getViholliset().get(0));
+            System.out.println("You attacked the " + Luola.getViholliset().get(0).annaNimi() + ".");
+            if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
+                System.out.println("The " + Luola.getViholliset().get(0).annaNimi() + " died.");  
+                Luola.getViholliset().remove(0);
             }
             
-            for (Vihollinen vihollinen : viholliset) {
+            for (Vihollinen vihollinen : Luola.getViholliset()) {
             System.out.println("The " + vihollinen.annaNimi() + " attacked you.");
-            hyokkaa(vihollinen, hahmo);           
-            if(hahmo.annaNykyinenHP()<1){
+            hyokkaa(vihollinen, Luolasto.getHahmo());           
+            if(Luolasto.getHahmo().annaNykyinenHP()<1){
                 System.out.println("You died.");
                 break;
             }

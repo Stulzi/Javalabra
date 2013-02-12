@@ -1,13 +1,10 @@
 package UI;
    
 import Elavat.Pelihahmo;
-import Elavat.Vihollinen;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.ArrayList;
-import java.util.Arrays;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,12 +18,12 @@ public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
     private Pelihahmo hahmo;
-    private ArrayList<Vihollinen> viholliset;
-
-    public Kayttoliittyma(Pelihahmo hahmo,Vihollinen... viholliset) {
+    
+    public Kayttoliittyma(Pelihahmo hahmo){
         this.hahmo=hahmo;
-        this.viholliset.addAll(Arrays.asList(viholliset));
     }
+
+
 
     @Override
     public void run() {
@@ -45,11 +42,10 @@ public class Kayttoliittyma implements Runnable {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
         
-        container.add(new JTextArea(
-                "HP:" + hahmo.annaNykyinenHP() + "/" + hahmo.annaHP() + 
-                " SP:" + hahmo.annaNykyinenSP() + "/" + hahmo.annaSP())
-                ).setEnabled(false);
-        container.add(new JTextArea("Testiteksti")).setEnabled(false);
+        JTextArea status = new JTextArea(hahmo.annaStatus());
+        JTextArea teksti =new JTextArea("Testiteksti");
+        container.add(status).setEnabled(false);
+        container.add(teksti).setEnabled(false);
         container.add(LuoNapit(), BorderLayout.SOUTH);
     }
     
@@ -57,8 +53,8 @@ public class Kayttoliittyma implements Runnable {
          JPanel panel = new JPanel(new GridLayout(1, 2));
          JButton hyokkaa = new JButton("Attack");
          JButton special = new JButton("Special");
-         HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija(hahmo, viholliset);
-         SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija(hahmo, viholliset);
+         HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija();
+         SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija();
          hyokkaa.addActionListener(hyokkaysKuuntelija);
          special.addActionListener(specialKuuntelija);
          panel.add(hyokkaa);
@@ -71,6 +67,11 @@ public class Kayttoliittyma implements Runnable {
     public JFrame getFrame() {
         return frame;
     }
+    
+    public void paivitaStatus(){
+        
+    }
+    
 }
     
 

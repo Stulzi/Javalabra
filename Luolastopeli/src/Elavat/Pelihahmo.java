@@ -138,4 +138,9 @@ public class Pelihahmo implements Elollinen{
         return this.nykyinenSP;
     }
     
+    public String annaStatus(){
+        return "HP:" + this.annaNykyinenHP() + "/" + this.annaHP() 
+                + " SP:" + this.annaNykyinenSP() + "/" + this.annaSP();
+    }
+    
 }

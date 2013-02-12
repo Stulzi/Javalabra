@@ -29,6 +29,10 @@ public class Luola {
         return false;
     }
     
+    public static ArrayList<Vihollinen> getViholliset(){
+        return Luola.viholliset;
+    }
+    
     
 
     /**
@@ -37,12 +41,8 @@ public class Luola {
     public static void taistele(){
         
         while(true){
-            
-            
-            Taistelu.taistelu(hahmo, viholliset);
             if(onkoTyhja()){
                 System.out.println("You beat all the enemies!");
-                // tänne metodi jolla siirrytään seuraavaan huoneeseen
                 break;
             }
             if(hahmo.onkoElossa()==false){
