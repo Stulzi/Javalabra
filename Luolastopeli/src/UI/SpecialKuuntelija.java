@@ -8,13 +8,21 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class SpecialKuuntelija implements ActionListener{
-
-    SpecialKuuntelija() {
+    Kayttoliittyma ui;
+    Taistelu t;
+    
+    SpecialKuuntelija(Kayttoliittyma ui) {
+        this.ui = ui;
+        t = new Taistelu();
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        Taistelu.taistelu("special");
+        t.taistelu("special");
+        ui.setAktiivinenTaistelu(t);
+        ui.paivitaHahmoAction();
+        ui.paivitaVihollinenAction();
+        ui.paivitaStatus();
     }
     
     

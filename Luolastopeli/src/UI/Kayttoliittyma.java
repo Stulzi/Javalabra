@@ -1,6 +1,7 @@
 package UI;
    
 import Elavat.Pelihahmo;
+import Logiikka.Taistelu;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,6 +19,10 @@ public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
     private Pelihahmo hahmo;
+    private Taistelu taistelu;
+    private JTextArea status;
+    private JTextArea hahmoAction;
+    private JTextArea vihollinenAction;
     
     public Kayttoliittyma(Pelihahmo hahmo){
         this.hahmo=hahmo;
@@ -42,11 +47,13 @@ public class Kayttoliittyma implements Runnable {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
         
-        JTextArea status = new JTextArea();
-        status.setText(hahmo.annaStatus());
-        JTextArea teksti =new JTextArea("Testiteksti");
+        status = new JTextArea();
+        hahmoAction = new JTextArea();
+        vihollinenAction = new JTextArea();
+        hahmoAction.setText(hahmo.annaStatus());
         container.add(status).setEnabled(false);
-        container.add(teksti).setEnabled(false);
+        container.add(hahmoAction).setEnabled(false);
+        container.add(vihollinenAction).setEnabled(false);
         container.add(LuoNapit(), BorderLayout.SOUTH);
     }
     
@@ -55,7 +62,7 @@ public class Kayttoliittyma implements Runnable {
          JButton hyokkaa = new JButton("Attack");
          JButton special = new JButton("Special");
          HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija();
-         SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija();
+         SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija(this);
          hyokkaa.addActionListener(hyokkaysKuuntelija);
          special.addActionListener(specialKuuntelija);
          panel.add(hyokkaa);
@@ -70,8 +77,23 @@ public class Kayttoliittyma implements Runnable {
     }
     
     public void paivitaStatus(){
-        
+        status.setText(hahmo.annaStatus());
     }
+    
+    public void paivitaHahmoAction(){
+        hahmoAction.setText(taistelu.getHahmo().getTaistelutila());    
+    }
+    
+    public void paivitaVihollinenAction(){
+        vihollinenAction.setText(taistelu.getVihollinen().getTaistelutila());
+    }
+   
+    
+    public void setAktiivinenTaistelu(Taistelu t){
+        taistelu = t;
+    }
+    
+   
     
 }
     

@@ -9,6 +9,7 @@ public class Pelihahmo implements Elollinen{
     private int puolustus;
     private int maxSP;
     private int nykyinenSP;
+    private String taisteluTila;
     
     public Pelihahmo(int maxHP, int maxSP, int voima, int puolustus){
         this.nimi= "You";
@@ -141,6 +142,14 @@ public class Pelihahmo implements Elollinen{
     public String annaStatus(){
         return "HP:" + this.annaNykyinenHP() + "/" + this.annaHP() 
                 + " SP:" + this.annaNykyinenSP() + "/" + this.annaSP();
+    }
+    
+    public void asetaTaistelutila(String tila){
+        taisteluTila = tila;
+    }
+    
+    public String getTaistelutila(){
+        return taisteluTila;
     }
     
 }

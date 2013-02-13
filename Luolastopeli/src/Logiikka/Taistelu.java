@@ -8,6 +8,8 @@ import java.util.Random;
 
 public class Taistelu {
     
+       private static Pelihahmo hahmo;
+       private static Vihollinen vihu;
     
     /**
      * Suorittaa yhden vuoron taistelusta hahmon ja vihollisten välillä
@@ -15,6 +17,8 @@ public class Taistelu {
      * @param viholliset tämänhetkiset viholliset
      */
     public static void taistelu(String komento){
+        hahmo = Luolasto.getHahmo();
+        vihu = Luola.getViholliset().get(0);
         
         if(komento.contentEquals("hyokkaa")){
             hyokkaa(Luolasto.getHahmo(), Luola.getViholliset().get(0));
@@ -27,13 +31,14 @@ public class Taistelu {
             erikoishyokkaa(Luolasto.getHahmo(), Luola.getViholliset().get(0));
         }
             System.out.println("You attacked the " + Luola.getViholliset().get(0).annaNimi() + ".");
+            hahmo.asetaTaistelutila("You attacked the " + Luola.getViholliset().get(0).annaNimi() + ".");
             if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
-                System.out.println("The " + Luola.getViholliset().get(0).annaNimi() + " died.");  
+                vihu.asetaTaistelutila("The " + Luola.getViholliset().get(0).annaNimi() + " died.");  
                 Luola.getViholliset().remove(0);
             }
             
             for (Vihollinen vihollinen : Luola.getViholliset()) {
-            System.out.println("The " + vihollinen.annaNimi() + " attacked you.");
+            vihu.asetaTaistelutila("The " + vihollinen.annaNimi() + " attacked you.");
             hyokkaa(vihollinen, Luolasto.getHahmo());           
             if(Luolasto.getHahmo().annaNykyinenHP()<1){
                 System.out.println("You died.");
@@ -74,4 +79,11 @@ public class Taistelu {
          vihollinen.vahennaNykyistaHP(vahinko);
     }
     
+    public Pelihahmo getHahmo(){
+        return hahmo;
+    }
+    
+    public Vihollinen getVihollinen(){
+        return vihu;
+    }
 }

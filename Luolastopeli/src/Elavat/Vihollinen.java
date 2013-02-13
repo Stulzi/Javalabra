@@ -7,6 +7,7 @@ public class Vihollinen implements Elollinen{
     private int nykyinenHP;
     private int voima;
     private int puolustus;
+    private String taistelutila;
 
     public Vihollinen(String nimi, int maxHP, int voima, int puolustus){
         this.maxHP=maxHP;
@@ -62,5 +63,12 @@ public class Vihollinen implements Elollinen{
     public int annaNykyinenHP(){
         return this.nykyinenHP;
     }
+
+    public String getTaistelutila() {
+        return taistelutila;
+    }
     
+    public void asetaTaistelutila(String tila){
+        taistelutila=tila;
+    }
 }
