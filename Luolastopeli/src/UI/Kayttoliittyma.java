@@ -1,6 +1,9 @@
 package UI;
    
 import Elavat.Pelihahmo;
+import Elavat.Vihollinen;
+import Logiikka.Luola;
+import Logiikka.Luolasto;
 import Logiikka.Taistelu;
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -50,7 +53,7 @@ public class Kayttoliittyma implements Runnable {
         status = new JTextArea();
         hahmoAction = new JTextArea();
         vihollinenAction = new JTextArea();
-        hahmoAction.setText(hahmo.annaStatus());
+        status.setText(hahmo.annaStatus());
         container.add(status).setEnabled(false);
         container.add(hahmoAction).setEnabled(false);
         container.add(vihollinenAction).setEnabled(false);
@@ -61,7 +64,7 @@ public class Kayttoliittyma implements Runnable {
          JPanel panel = new JPanel(new GridLayout(1, 2));
          JButton hyokkaa = new JButton("Attack");
          JButton special = new JButton("Special");
-         HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija();
+         HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija(this);
          SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija(this);
          hyokkaa.addActionListener(hyokkaysKuuntelija);
          special.addActionListener(specialKuuntelija);
@@ -81,11 +84,14 @@ public class Kayttoliittyma implements Runnable {
     }
     
     public void paivitaHahmoAction(){
-        hahmoAction.setText(taistelu.getHahmo().getTaistelutila());    
+        hahmoAction.append(Luolasto.getHahmo().getTaistelutila()); 
     }
     
     public void paivitaVihollinenAction(){
-        vihollinenAction.setText(taistelu.getVihollinen().getTaistelutila());
+        for (Vihollinen vihollinen : Luola.getViholliset()) {
+            vihollinenAction.append(vihollinen.getTaistelutila());
+        }
+        
     }
    
     
@@ -93,8 +99,20 @@ public class Kayttoliittyma implements Runnable {
         taistelu = t;
     }
     
+    public void tyhjaaHahmoAction(){
+        hahmoAction.setText("");
+    }
+    
+    public void tyhjaaVihollinenAction(){
+        vihollinenAction.setText("");
+    }
+    
+    public void tyhjaaActionit(){
+        hahmoAction.setText("");
+        vihollinenAction.setText("");
+    }
    
-    
+    public JTextArea annaHahmoAction(){
+        return hahmoAction;
+    }
 }
-    
-

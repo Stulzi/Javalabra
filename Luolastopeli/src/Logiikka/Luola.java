@@ -3,15 +3,18 @@ package Logiikka;
 import Elavat.Pelihahmo;
 import Elavat.Vihollinen;
 import UI.HyokkayksenKuuntelija;
+import UI.Kayttoliittyma;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Luola {
     private static Pelihahmo hahmo;
     private static ArrayList<Vihollinen> viholliset;
+    Kayttoliittyma ui;
     
-    public Luola(Pelihahmo hahmo, Vihollinen... viholliset){
+    public Luola(Pelihahmo hahmo, Kayttoliittyma ui, Vihollinen... viholliset){
         Luola.hahmo=hahmo;
+        this.ui = ui;
         Luola.viholliset= new ArrayList<Vihollinen>();
         Luola.viholliset.addAll(Arrays.asList(viholliset));
     }
@@ -51,14 +54,13 @@ public class Luola {
     /**
      *Aloittaa taistelun hahmon ja vihollisten välillä
      */
-    public static void taistele(){
+    public void taistele(){
         
         
-        System.out.println("You eneter a room with" + listaaViholliset(viholliset) );
         
         while(true){
             if(onkoTyhja()){
-                System.out.println("You beat all the enemies!");
+                hahmo.asetaTaistelutila("You beat all the enemies!\n");
                 break;
             }
             if(hahmo.onkoElossa()==false){

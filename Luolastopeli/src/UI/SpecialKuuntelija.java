@@ -18,7 +18,8 @@ public class SpecialKuuntelija implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        t.taistelu("special");
+        ui.tyhjaaActionit();
+        t.taistelu("special", ui);
         ui.setAktiivinenTaistelu(t);
         ui.paivitaHahmoAction();
         ui.paivitaVihollinenAction();

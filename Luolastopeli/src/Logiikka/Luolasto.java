@@ -22,15 +22,15 @@ public class Luolasto {
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(hahmo);
         SwingUtilities.invokeLater(kayttoliittyma);
 
-       Luola luola1= new Luola(hahmo,peikko,lepakko);
+       Luola luola1= new Luola(hahmo, kayttoliittyma, peikko, lepakko);
        luola1.taistele();
        hahmo.lisaaVoimaa(30);
        hahmo.paranna();
        
-       Luola luola2 = new Luola(hahmo, pollo, jatti);
+       Luola luola2 = new Luola(hahmo, kayttoliittyma, pollo, jatti);
        luola2.taistele();
     }
     
    
-            
+
 }

@@ -9,13 +9,23 @@ import java.util.ArrayList;
 
 public class HyokkayksenKuuntelija implements ActionListener {
 
-    HyokkayksenKuuntelija() {   
+    Kayttoliittyma ui;
+    Taistelu t;
+    
+    HyokkayksenKuuntelija(Kayttoliittyma ui) {   
+        this.ui=ui;
+        t=new Taistelu();
     }
 
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        Taistelu.taistelu("hyokkaa");
+        ui.tyhjaaActionit();
+        Taistelu.taistelu("hyokkaa", ui);
+        ui.setAktiivinenTaistelu(t);
+        ui.paivitaHahmoAction();
+        ui.paivitaVihollinenAction();
+        ui.paivitaStatus();
         
         
     }
