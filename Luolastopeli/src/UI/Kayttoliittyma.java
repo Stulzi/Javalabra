@@ -115,4 +115,8 @@ public class Kayttoliittyma implements Runnable {
     public JTextArea annaHahmoAction(){
         return hahmoAction;
     }
+
+    public JTextArea annaVihollinenAction() {
+        return vihollinenAction;
+    }
 }

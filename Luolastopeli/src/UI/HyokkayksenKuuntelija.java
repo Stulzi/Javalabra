@@ -23,8 +23,6 @@ public class HyokkayksenKuuntelija implements ActionListener {
         ui.tyhjaaActionit();
         Taistelu.taistelu("hyokkaa", ui);
         ui.setAktiivinenTaistelu(t);
-        ui.paivitaHahmoAction();
-        ui.paivitaVihollinenAction();
         ui.paivitaStatus();
         
         

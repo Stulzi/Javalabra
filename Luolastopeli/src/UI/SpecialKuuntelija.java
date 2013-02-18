@@ -21,8 +21,6 @@ public class SpecialKuuntelija implements ActionListener{
         ui.tyhjaaActionit();
         t.taistelu("special", ui);
         ui.setAktiivinenTaistelu(t);
-        ui.paivitaHahmoAction();
-        ui.paivitaVihollinenAction();
         ui.paivitaStatus();
     }
     

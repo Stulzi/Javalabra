@@ -35,8 +35,7 @@ public class Taistelu {
         }
          hahmo.asetaTaistelutila("You attacked the " + vihu.annaNimi() + ".\n");
             if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
-                vihu.asetaTaistelutila("The " + vihu.annaNimi() + " died.\n");
-                ui.paivitaVihollinenAction();
+                ui.annaVihollinenAction().setText("The " + vihu.annaNimi() + " died.\n");
                 Luola.getViholliset().remove(0);
             }
             
@@ -47,7 +46,12 @@ public class Taistelu {
                 hahmo.asetaTaistelutila("You died.");
                 break;
             }
+            
+            
         }
+            
+        ui.paivitaHahmoAction();
+        ui.paivitaVihollinenAction();
             
         }
        
