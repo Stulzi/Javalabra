@@ -154,9 +154,15 @@ public class Pelihahmo implements Elollinen{
 
     public void lisaaNykyistaHP(int i) {
         this.nykyinenHP= this.nykyinenHP+i;
+        if (this.nykyinenHP>this.maxHP){
+            this.nykyinenHP=this.maxHP;
+        }
     }
     
     public void lisaaNykyistaSP(int i){
         this.nykyinenSP= this.nykyinenSP+i;
+        if (this.nykyinenSP>this.maxSP){
+            this.nykyinenSP=this.maxSP;
+        }
     }
 }
