@@ -61,15 +61,19 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private JPanel LuoNapit(){
-         JPanel panel = new JPanel(new GridLayout(1, 2));
+         JPanel panel = new JPanel(new GridLayout(1, 3));
          JButton hyokkaa = new JButton("Attack");
          JButton special = new JButton("Special");
+         JButton paranna = new JButton("Heal");
          HyokkayksenKuuntelija hyokkaysKuuntelija = new HyokkayksenKuuntelija(this);
          SpecialKuuntelija specialKuuntelija = new SpecialKuuntelija(this);
+         ParannuksenKuuntelija parannusKuuntelija = new ParannuksenKuuntelija(this);
          hyokkaa.addActionListener(hyokkaysKuuntelija);
          special.addActionListener(specialKuuntelija);
+         paranna.addActionListener(parannusKuuntelija);
          panel.add(hyokkaa);
          panel.add(special);
+         panel.add(paranna);
          return panel;
     }
          

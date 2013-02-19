@@ -60,8 +60,7 @@ public class Luola {
         
         while(true){
             if(onkoTyhja()){
-                hahmo.asetaTaistelutila("You beat all the enemies!\n");
-                ui.paivitaHahmoAction();
+                hahmo.asetaTaistelutila("You beat all the enemies!\n");              
                 break;
             }
             if(hahmo.onkoElossa()==false){

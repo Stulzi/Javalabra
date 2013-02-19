@@ -32,3 +32,5 @@ Harjoitustyöhön käytetyt tunnit:
 15-16: Korjailin kaikki system.out.printit näkymään itse pelissä. Myös muuta pientä muuttelua.
 	18.2.
 12-13: Käyttöliittymä toimii nyt yhtä bugia lukuunottamatta täydellisesti.
+	19.2.
+16-17: Lisäsin parannus-vaihtoehdontaistelun moninpuolistamiseksi.

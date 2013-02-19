@@ -25,6 +25,8 @@ public class Taistelu {
         
         if(komento.contentEquals("hyokkaa")){
             hyokkaa(Luolasto.getHahmo(), vihu);
+            hahmo.lisaaNykyistaSP(5);
+            hahmo.asetaTaistelutila("You attacked the " + vihu.annaNimi() + ".\n");
            
         } else if(komento.contentEquals("special")){
             if(Luolasto.getHahmo().annaNykyinenSP()<30){
@@ -32,8 +34,18 @@ public class Taistelu {
             }
             Luolasto.getHahmo().vahennaNykyistaSP(30);
             erikoishyokkaa(Luolasto.getHahmo(), vihu);
+            hahmo.asetaTaistelutila("You attacked the " + vihu.annaNimi() + ".\n");
+            
+        } else if(komento.contentEquals("paranna")){
+            if(Luolasto.getHahmo().annaNykyinenSP()<20){
+                return;
+            }
+            Luolasto.getHahmo().vahennaNykyistaSP(20);
+            Luolasto.getHahmo().lisaaNykyistaHP(150);
+            hahmo.asetaTaistelutila("You healed yourself.\n");
+            
         }
-         hahmo.asetaTaistelutila("You attacked the " + vihu.annaNimi() + ".\n");
+        
             if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
                 ui.annaVihollinenAction().setText("The " + vihu.annaNimi() + " died.\n");
                 Luola.getViholliset().remove(0);

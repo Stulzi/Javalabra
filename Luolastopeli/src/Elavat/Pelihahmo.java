@@ -151,5 +151,12 @@ public class Pelihahmo implements Elollinen{
     public String getTaistelutila(){
         return taisteluTila;
     }
+
+    public void lisaaNykyistaHP(int i) {
+        this.nykyinenHP= this.nykyinenHP+i;
+    }
     
+    public void lisaaNykyistaSP(int i){
+        this.nykyinenSP= this.nykyinenSP+i;
+    }
 }
