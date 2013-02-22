@@ -13,13 +13,18 @@ public class Luolasto {
         return Luolasto.hahmo;
     }
     
+    /**
+     * Luo hahmon, viholliset, käyytöliittymän ja luolat. Pitää yllä koko ohjelman järjestyksessä toimimista.
+     * @throws InterruptedException
+     * @throws InvocationTargetException
+     */
     public static void run() throws InterruptedException, InvocationTargetException{
        hahmo = new Pelihahmo(600,100,160,50);       
        Vihollinen peikko = new Vihollinen("Goblin", 440, 110, 50);
        Vihollinen lepakko = new Vihollinen("Bat", 300, 90, 40);
        Vihollinen pollo = new Vihollinen("Owl", 320, 100, 55);
        Vihollinen jatti = new Vihollinen("Ogre", 500, 140, 70);
-       Vihollinen lohis = new Vihollinen("Giant Goblin", 720, 190, 90);
+       Vihollinen isoPeikko = new Vihollinen("Giant Goblin", 720, 190, 90);
        
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(hahmo);
         SwingUtilities.invokeAndWait(kayttoliittyma);
@@ -39,12 +44,16 @@ public class Luolasto {
        hahmo.lisaaVoimaa(20);
        hahmo.paranna();
        
-       Luola luola3 = new Luola(hahmo, kayttoliittyma, lohis);
+       Luola luola3 = new Luola(hahmo, kayttoliittyma, isoPeikko);
        Luolasto.meneLuolaan(kayttoliittyma);
        luola3.taistele();
     }
     
-     public static void meneLuolaan(Kayttoliittyma ui){
+     /**
+     * Päivittää käyttöliittymässä hahmon tapahtumia
+     * @param ui käyttöliittymä
+     */
+    public static void meneLuolaan(Kayttoliittyma ui){
         hahmo.asetaTaistelutila("You enter a room. In the room there is" + Luola.listaaViholliset(Luola.getViholliset()) + ".");
         ui.paivitaHahmoAction();
         ui.paivitaStatus();

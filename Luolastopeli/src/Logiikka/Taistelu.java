@@ -46,7 +46,7 @@ public class Taistelu {
             
         }
         
-            if(Luola.getViholliset().get(0).annaNykyinenHP()<1){
+            if(!Luola.getViholliset().get(0).onkoElossa()){
                 ui.annaVihollinenAction().setText("The " + vihu.annaNimi() + " died.\n");
                 Luola.getViholliset().remove(0);
             }
@@ -69,8 +69,8 @@ public class Taistelu {
        
     /**
      * Suorittaa yhden hyökkäyksen
-     * @param hyokkaava hyökkäävä 
-     * @param hyokatty hyökkäyksen kohde
+     * @param hyokkaava hyökkäävä (elollinen)
+     * @param hyokatty hyökkäyksen kohde (elollinen)
      */
     public static void hyokkaa(Elollinen hyokkaava, Elollinen hyokatty){
          Random noppa = new Random();
@@ -84,6 +84,11 @@ public class Taistelu {
          hyokatty.vahennaNykyistaHP(vahinko);
     }
 
+    /**
+     * Suorittaa yhden erikoishyökkäyksen. Nämä kuluttavat hahmon SP-arvoa.
+     * @param hahmo pelihahmo
+     * @param vihollinen vihollinen johon hyökätään
+     */
     private static void erikoishyokkaa(Pelihahmo hahmo, Vihollinen vihollinen) {
          Random noppa = new Random();
          int voima=hahmo.annaVoima();

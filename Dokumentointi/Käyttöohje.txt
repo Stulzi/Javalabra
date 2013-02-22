@@ -1,0 +1,3 @@
+GoblinCave:
+Tehtävänäsi on voittaa luolastosta löytyvät viholliset.
+Kun olet voittanut yhden huoneen, siirryt seuraavaan.

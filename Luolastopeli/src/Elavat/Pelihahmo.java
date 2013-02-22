@@ -11,6 +11,13 @@ public class Pelihahmo implements Elollinen{
     private int nykyinenSP;
     private String taisteluTila;
     
+    /**
+     * Luo pelihahmon annetuilla arvoilla
+     * @param maxHP hahmon maksimi HP
+     * @param maxSP hahmon maksimi SP
+     * @param voima hahmon hyökkäysvoima
+     * @param puolustus hahmon puolustus
+     */
     public Pelihahmo(int maxHP, int maxSP, int voima, int puolustus){
         this.nimi= "You";
         this.maxHP=maxHP;
@@ -152,6 +159,10 @@ public class Pelihahmo implements Elollinen{
         return taisteluTila;
     }
 
+    /**
+     * lisää hahmon nykyistä HP-arvoa, mutta ei maksimi HP:ta isommaksi
+     * @param i kasvatettava määrä
+     */
     public void lisaaNykyistaHP(int i) {
         this.nykyinenHP= this.nykyinenHP+i;
         if (this.nykyinenHP>this.maxHP){
@@ -159,6 +170,10 @@ public class Pelihahmo implements Elollinen{
         }
     }
     
+    /**
+     * lisää hahmon nykyistä SP-arvoa, mutta ei maksimi SP:ta isommaksi
+     * @param i kasvatettava määrä
+     */
     public void lisaaNykyistaSP(int i){
         this.nykyinenSP= this.nykyinenSP+i;
         if (this.nykyinenSP>this.maxSP){

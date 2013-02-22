@@ -1,0 +1,2 @@
+Luolasto luo muut luokat taistelua lukuunottamatta. Taistelu-luokan luo Kayttoliittyma.
+Taistelu-luokka aiheuttaa muutoksia Pelihahmo- ja Vihollinen-luokan ilmentymiin, joita Luola-luokka seuraa. 

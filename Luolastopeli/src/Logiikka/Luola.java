@@ -36,6 +36,11 @@ public class Luola {
         return Luola.viholliset;
     }
     
+    /**
+     * Antaa String-muotoisen esityksen listassa olevista vihollisista
+     * @param viholliset lista vihollisista
+     * @return String-esitys
+     */
     public static String listaaViholliset(ArrayList<Vihollinen> viholliset){
        
         String lista = "";
@@ -52,7 +57,7 @@ public class Luola {
     
 
     /**
-     *Aloittaa taistelun hahmon ja vihollisten välillä
+     *Lopettaa taistelun jos pelihahmo on kuollut tai kaikki viholliset ovat kuolleet
      */
     public void taistele(){
         

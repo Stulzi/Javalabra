@@ -28,9 +28,15 @@ Harjoitustyöhön käytetyt tunnit:
 	12.2.
 11-12: Koetin toteuttaa käyttöliittymää. (Jokin mättää...)
 13-15: Parantelin logiikkaa. Nyt taitaapi vain käyttöliittymä kaivata parantelua.
+
 	17.2.
 15-16: Korjailin kaikki system.out.printit näkymään itse pelissä. Myös muuta pientä muuttelua.
+
 	18.2.
 12-13: Käyttöliittymä toimii nyt yhtä bugia lukuunottamatta täydellisesti.
+
 	19.2.
 16-17: Lisäsin parannus-vaihtoehdontaistelun moninpuolistamiseksi.
+
+	22.2.
+11-12: Tein puuttuvat dokumentoinnit ja .jar-tiedoston.

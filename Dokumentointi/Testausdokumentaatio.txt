@@ -1,0 +1,4 @@
+Monta asiaa ei t‰ss‰ ohjelmassa pystynyt testaamaan JUnitTesteill‰ (ainakaan helposti), joten manuaalista testausta oli paljon.
+Er‰s syy oli esimerkiksi sattuman vaikutus taisteluihin. (Vahinkoa m‰‰ritt‰ess‰ heitet‰‰n noppaa.)
+Testauksien perusteella ohjelma tuntuu toimivan oikein yht‰ poikkeusta lukuunottamatta.
+Kun vimmeinen huone on l‰p‰isty, ei ohjelma ilmoita t‰st‰ vaikka sen pit‰isikin.

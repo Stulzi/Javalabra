@@ -1,7 +1,8 @@
 Aihe: luolastopeli
-Luodaan peli, jossa päähenkilön tehtävänä on kulkea sokkeloisissa luolastoissa taistellen hirviöitä vastaan ja saadaan kokemuspisteitä, joiden avulla tullaan vahvemmaksi. 
+Luodaan peli, jossa päähenkilön tehtävänä on taistella hirviöitä vastaan ja tulla taisteluista vahvemmaksi.
 Luolaston lopussa odottaa pomotaistelu, joka on tavallisia vastustajia hankalampi.
-Mahdollisesti lisätään pelin tallentamismahdollisuus ja useampia luolastoja.
+
+Koodaajan helppo tehdä omia vihollisia ja luolastoja. Muokkauspotentiaalia paljon.
 
 Käyttäjät: Pelaaja
 
@@ -9,4 +10,3 @@ Kaikkien käyttäjien toiminnot:
 
     Pelin avaaminen
     Pelin pelaaminen
-    Pelitilanteen tallentaminen
